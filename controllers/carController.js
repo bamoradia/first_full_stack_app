@@ -29,6 +29,8 @@ router.post('/', (req, res) => {
 			console.log(newCar);
 			res.redirect('/cars');
 		}
+	})
+})
 
 
 //NEW ROUTE
@@ -96,26 +98,7 @@ router.delete('/:id', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = router;
 
 
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Index Page</title>
+</head>
+<body>
+	<h4><a href="/cars/new">Create New Car</a></h4>
+
+	<ul>
+		<%for(let i = 0; i < cars.length; i++) {%>
+			<h3><a href="/cars/<%=cars[i].id%>"><%=cars[i].name%></a></h3>
+
+			<form method='POST' action='/cars/<%=cars[i].id%>/?_method=DELETE'>
+				<button type='submit'>Delete <%=cars[i].name%></button>
+			</form>
+
+			<form method='GET' action='/cars/<%=cars[i].id%>/edit'>
+				<button type='submit'>Delete <%=cars[i].name%></button>
+			</form>
+
+		<% } %>
+
+	</ul>
+
+
+</body>
+</html>
