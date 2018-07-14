@@ -54,9 +54,45 @@ router.get('/:id/edit', (req, res) => {
 
 
 //PUT ROUTE
-router.post(/:id)
+router.post('/:id', (req, res) => {
+	Cars.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedCar) => {
+		if(err) {
+			console.log(err, 'error with PUT Route');
+		} else {
+			console.log(updatedCar);
+			res.redirect('/cars');
+		}
+	})
+})
 
 
+
+//SHOW ROUTE
+router.get('/:id', (req, res) => {
+	Cars.findById(req.params.id, (err, foundCar) => {
+		if(err) {
+			console.log(err, 'error with SHOW Route');
+		} else {
+			res.render('show.ejs', {
+				car: foundCar
+			})
+		}
+	})
+})
+
+
+
+//DELETE ROUTE 
+router.delete('/:id', (req, res) => {
+	Cars.findByIdAndRemove(req.params.id, (err, deletedCar) => {
+		if(err) {
+			console.log(err, 'error with DELETE Route');
+		} else {
+			console.log(deletedCar);
+			res.redirect('/cars');
+		}
+	})
+})
 
 
 
