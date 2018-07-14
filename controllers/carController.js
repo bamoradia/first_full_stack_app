@@ -56,7 +56,7 @@ router.get('/:id/edit', (req, res) => {
 
 
 //PUT ROUTE
-router.post('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
 	Cars.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedCar) => {
 		if(err) {
 			console.log(err, 'error with PUT Route');

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit <%=car.make%> <%=car.model%></title>
+</head>
+<body>
+	<h2>Edit <%=car.make%> <%=car.model%></h2>
+
+	<form action='/cars/<%=car.id%>/?_method=PUT' method='POST'>
+		Make: <input type="text" name="make" value='<%=car.make%>'><br>
+		Model: <input type="text" name="model" value='<%=car.model%>'><br>
+		Color: <input type="text" name="color" value='<%=car.color%>'><br>
+		Year: <input type="number" name="year" value='<%=car.year%>'><br>
+		Miles: <input type="number" name="miles" value='<%=car.miles%>'><br>
+
+		<input type="submit" name="Submit Change">
+	</form>
+</body>
+</html>
