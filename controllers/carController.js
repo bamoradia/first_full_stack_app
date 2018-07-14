@@ -29,8 +29,53 @@ router.post('/', (req, res) => {
 			console.log(newCar);
 			res.redirect('/cars');
 		}
+
+
+//NEW ROUTE
+router.get('/new', (req, res) => {
+	res.render('new.ejs');
+})
+
+
+
+//EDIT ROUTE
+router.get('/:id/edit', (req, res) => {
+	Cars.findById(req.params.id, (err, foundCar) => {
+		if(err) {
+			console.log(err, 'error with EDIT Route');
+		} else {
+			res.render('edit.ejs', {
+				car: foundCar
+			})
+		}
 	})
 })
+
+
+
+//PUT ROUTE
+router.post(/:id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

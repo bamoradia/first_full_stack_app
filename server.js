@@ -18,7 +18,7 @@ app.use(methodOverride('_method'));
 
 const carController = require('./controllers/carController');
 
-app.use('/car', carController);
+app.use('/cars', carController);
 
 
 app.listen(port, () => {
